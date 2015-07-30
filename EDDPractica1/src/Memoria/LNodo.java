@@ -9,11 +9,11 @@ package Memoria;
  *
  * @author JP
  */
-public class Nodo {
+public class LNodo {
     private int info;
-    private Nodo Siguiente;
-    private Nodo Atras;
-    public Nodo()
+    private LNodo Siguiente;
+    private LNodo Atras;
+    public LNodo()
     {
         info = 0;
         Siguiente = null;
@@ -28,19 +28,19 @@ public class Nodo {
         return info;
     } 
     
-    public void SetSiguiente(Nodo s)
+    public void SetSiguiente(LNodo s)
     {
         Siguiente = s;
     }
-    public Nodo GetSiguiente()
+    public LNodo GetSiguiente()
     {
         return Siguiente;
     }
-    public void SetAtras(Nodo a)
+    public void SetAtras(LNodo a)
     {
         Atras = a;
     }
-    public Nodo GetAtras()
+    public LNodo GetAtras()
     {
         return Atras;
     }

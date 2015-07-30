@@ -10,8 +10,8 @@ package Memoria;
  * @author JP
  */
 public class Lista {
-    private Nodo Inicio;
-    private Nodo Fin;
+    private LNodo Inicio;
+    private LNodo Fin;
     public Lista()
     {
         Inicio = null;
@@ -19,7 +19,7 @@ public class Lista {
     }
     public void IngresarInicio(Lista l, int i)
     {
-        Nodo nuevo = new Nodo();
+        LNodo nuevo = new LNodo();
         nuevo.SetInfo(i);
         if(ListaVacia(l))
         {
@@ -34,7 +34,7 @@ public class Lista {
     
     public void IngresarFin(Lista l,int i)
     {
-        Nodo nuevo = new Nodo();
+        LNodo nuevo = new LNodo();
         nuevo.SetInfo(i);
         if(ListaVacia(l))
         {
@@ -46,13 +46,13 @@ public class Lista {
             SetFin(nuevo);
         }
     }
-    public Nodo ExtraerInicio(Lista l)
+    public LNodo ExtraerInicio(Lista l)
     {
         if(ListaVacia(l))
         {
             return null;
         }else{
-            Nodo aux = l.GetInicio();
+            LNodo aux = l.GetInicio();
             if(l.GetInicio() == l.GetFin())
             {
                 l.SetInicio(null);
@@ -65,13 +65,13 @@ public class Lista {
             }
         }
     }
-    public Nodo ExtraerFin(Lista l)
+    public LNodo ExtraerFin(Lista l)
     {
         if(ListaVacia(l))
         {
             return null;
         }else{
-            Nodo aux = l.GetFin();
+            LNodo aux = l.GetFin();
             if(l.GetInicio() == l.GetFin())
             {
                 l.SetInicio(null);
@@ -89,19 +89,19 @@ public class Lista {
         return l.GetInicio() == null;
     }
     
-    private void SetInicio(Nodo i)
+    private void SetInicio(LNodo i)
     {
         Inicio = i;
     }
-    private Nodo GetInicio()
+    private LNodo GetInicio()
     {
         return Inicio;
     }
-    private void SetFin(Nodo f)
+    private void SetFin(LNodo f)
     {
         Fin = f;
     }
-    private Nodo GetFin()
+    private LNodo GetFin()
     {
         return Fin;
     }
