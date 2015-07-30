@@ -17,92 +17,94 @@ public class Lista {
         Inicio = null;
         Fin = null;
     }
-    public void IngresarInicio(Lista l, int i)
+    public void IngresarInicio(int i)
     {
         LNodo nuevo = new LNodo();
-        nuevo.SetInfo(i);
-        if(ListaVacia(l))
+        nuevo.setInfo(i);
+        if(ListaVacia())
         {
-            SetInicio(nuevo);
-            SetFin(nuevo);
+            setInicio(nuevo);
+            setFin(nuevo);
         }else{
-            nuevo.SetSiguiente(GetInicio());
-            GetInicio().SetAtras(nuevo);
-            SetInicio(nuevo);
+            nuevo.setSiguiente(getInicio());
+            getInicio().setAtras(nuevo);
+            setInicio(nuevo);
         }
     }
     
-    public void IngresarFin(Lista l,int i)
+    public void IngresarFin(int i)
     {
         LNodo nuevo = new LNodo();
-        nuevo.SetInfo(i);
-        if(ListaVacia(l))
+        nuevo.setInfo(i);
+        if(ListaVacia())
         {
-            SetInicio(nuevo);
-            SetFin(nuevo);
+            setInicio(nuevo);
+            setFin(nuevo);
         }else{
-            nuevo.SetAtras(GetFin());
-            GetFin().SetSiguiente(nuevo);
-            SetFin(nuevo);
+            nuevo.setAtras(getFin());
+            getFin().setSiguiente(nuevo);
+            setFin(nuevo);
         }
     }
-    public LNodo ExtraerInicio(Lista l)
+    public LNodo ExtraerInicio()
     {
-        if(ListaVacia(l))
+        if(ListaVacia())
         {
             return null;
         }else{
-            LNodo aux = l.GetInicio();
-            if(l.GetInicio() == l.GetFin())
+            LNodo aux = getInicio();
+            if(getInicio() == getFin())
             {
-                l.SetInicio(null);
-                l.SetFin(null);
+                setInicio(null);
+                setFin(null);
                 return aux;
             }else{
-                l.SetInicio(l.GetInicio().GetSiguiente());
-                l.GetInicio().SetAtras(null);
+                setInicio(getInicio().getSiguiente());
+                getInicio().setAtras(null);
                 return aux;
             }
         }
     }
-    public LNodo ExtraerFin(Lista l)
+    public LNodo ExtraerFin()
     {
-        if(ListaVacia(l))
+        if(ListaVacia())
         {
             return null;
         }else{
-            LNodo aux = l.GetFin();
-            if(l.GetInicio() == l.GetFin())
+            LNodo aux = getFin();
+            if(getInicio() == getFin())
             {
-                l.SetInicio(null);
-                l.SetFin(null);
+                setInicio(null);
+                setFin(null);
                 return aux;
             }else{
-                l.SetFin(l.GetFin().GetAtras());
-                l.GetFin().SetSiguiente(null);
+                setFin(getFin().getAtras());
+                getFin().setSiguiente(null);
                 return aux;
             }
         }
     }
-    public boolean ListaVacia(Lista l)
+    public boolean ListaVacia()
     {
-        return l.GetInicio() == null;
+        return getInicio() == null;
     }
-    
-    private void SetInicio(LNodo i)
-    {
-        Inicio = i;
-    }
-    private LNodo GetInicio()
-    {
+
+    public LNodo getInicio() {
         return Inicio;
     }
-    private void SetFin(LNodo f)
-    {
-        Fin = f;
+
+    public void setInicio(LNodo Inicio) {
+        this.Inicio = Inicio;
     }
-    private LNodo GetFin()
-    {
+
+    public LNodo getFin() {
         return Fin;
     }
+
+    public void setFin(LNodo Fin) {
+        this.Fin = Fin;
+    }
+    
+  
+    
 }

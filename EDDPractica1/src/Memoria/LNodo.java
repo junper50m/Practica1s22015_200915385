@@ -19,29 +19,29 @@ public class LNodo {
         Siguiente = null;
         Atras = null;
     }
-    public void SetInfo(int i)
-    {
-        info = i;
-    }
-    public int GetInfo()
-    {
+
+    public int getInfo() {
         return info;
-    } 
-    
-    public void SetSiguiente(LNodo s)
-    {
-        Siguiente = s;
     }
-    public LNodo GetSiguiente()
-    {
+
+    public void setInfo(int info) {
+        this.info = info;
+    }
+
+    public LNodo getSiguiente() {
         return Siguiente;
     }
-    public void SetAtras(LNodo a)
-    {
-        Atras = a;
+
+    public void setSiguiente(LNodo Siguiente) {
+        this.Siguiente = Siguiente;
     }
-    public LNodo GetAtras()
-    {
+
+    public LNodo getAtras() {
         return Atras;
     }
+
+    public void setAtras(LNodo Atras) {
+        this.Atras = Atras;
+    }
+    
 }
