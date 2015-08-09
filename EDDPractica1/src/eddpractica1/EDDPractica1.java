@@ -22,15 +22,7 @@ public class EDDPractica1 {
         System.out.println("-------------------------");
         M.EliminarFila();
         M.Mostrar();
-        System.out.println("-------------------------");
-        M.EliminarColumna();
-        M.Mostrar();
-        System.out.println("/////////////////////////");
-        M.EliminarColumna();
-        M.Mostrar();
-        System.out.println("/////////////////////////");
-        M.EliminarColumna();
-        M.Mostrar();
+        
     }
     
 }
