@@ -42,7 +42,7 @@ public class Matriz {
                         aux1 = tmp.getAtras();
                         while(aux != null)
                         {
-                            if(aux.getY() < y)
+                            if(aux.getY() < y && aux.getArriba() == null)
                             {
                                 MNodo n = new MNodo();
                                 n.setY(aux.getY()+1);
@@ -50,7 +50,9 @@ public class Matriz {
                                 aux.setArriba(n);
                                 n.setAbajo(aux);
                                 n.setAtras(aux1.getArriba());
+                                aux1.getArriba().setSiguiente(n);
                                 n.setSiguiente(aux2.getArriba());
+                                aux2.getArriba().setAtras(n);
                             }
                             aux = aux.getArriba();
                             aux1 = aux1.getArriba();
@@ -59,7 +61,7 @@ public class Matriz {
                     }else{
                         while(aux != null)
                         {
-                            if(aux.getY() < y)
+                            if(aux.getY() < y && aux.getArriba() == null)
                             {
                                 MNodo n = new MNodo();
                                 n.setY(aux.getY()+1);
@@ -67,6 +69,7 @@ public class Matriz {
                                 aux.setArriba(n);
                                 n.setAbajo(aux);
                                 n.setSiguiente(aux2.getArriba());
+                                aux2.getArriba().setAtras(n);
                             }
                             aux = aux.getArriba();
                             aux2 = aux2.getArriba();
@@ -78,7 +81,7 @@ public class Matriz {
                         aux1 = tmp.getAtras();
                         while(aux != null)
                         {
-                            if(aux.getY() < y)
+                            if(aux.getY() < y && aux.getArriba() == null)
                             {
                                 MNodo n = new MNodo();
                                 n.setY(aux.getY()+1);
@@ -86,6 +89,7 @@ public class Matriz {
                                 aux.setArriba(n);
                                 n.setAbajo(aux);
                                 n.setAtras(aux1.getArriba());
+                                aux1.getArriba().setSiguiente(n);
                             }
                             aux = aux.getArriba();
                             aux1 = aux1.getArriba();
@@ -93,7 +97,7 @@ public class Matriz {
                     }else{
                         while(aux != null)
                         {
-                            if(aux.getY() < y)
+                            if(aux.getY() < y && aux.getArriba() == null)
                             {
                                 MNodo n = new MNodo();
                                 n.setY(aux.getY()+1);
@@ -108,7 +112,97 @@ public class Matriz {
                 
                 
                 
-                if(tmp.getX() < x)
+                if(tmp.getX() < x && tmp.getSiguiente() == null)
+                {
+                    MNodo n = new MNodo();
+                    n.setY(tmp.getY());
+                    n.setX(tmp.getX()+1);
+                    n.setAtras(tmp);
+                    tmp.setSiguiente(n);
+                }
+                
+                tmp = tmp.getSiguiente();
+            }
+        }else{
+            MNodo aux;
+            MNodo aux1;
+            MNodo aux2;
+            MNodo tmp = Inicio;
+            while(tmp != null)
+            {
+                aux = tmp;
+                if(tmp.getSiguiente() != null)
+                {
+                    aux2 = tmp.getSiguiente();
+                    if(tmp.getAtras() != null)
+                    {
+                        aux1 = tmp.getAtras();
+                        while(aux != null)
+                        {
+                            if(aux.getY() < y && aux.getArriba() == null)
+                            {
+                                MNodo n = new MNodo();
+                                n.setY(aux.getY()+1);
+                                n.setX(aux.getX());
+                                aux.setArriba(n);
+                                n.setAbajo(aux);
+                                n.setAtras(aux1.getArriba());
+                                aux1.getArriba().setSiguiente(n);
+                            }
+                            aux = aux.getArriba();
+                            aux1 = aux1.getArriba();
+                        }
+                    }else{
+                        while(aux != null)
+                        {
+                            if(aux.getY() < y && aux.getArriba() == null)
+                            {
+                                MNodo n = new MNodo();
+                                n.setY(aux.getY()+1);
+                                n.setX(aux.getX());
+                                aux.setArriba(n);
+                                n.setAbajo(aux);
+                            }
+                            aux = aux.getArriba();
+                        }
+                    }
+                }else{
+                    if(tmp.getAtras() != null)
+                    {
+                        aux1 = tmp.getAtras();
+                        while(aux != null)
+                        {
+                            if(aux.getY() < y && aux.getArriba() == null)
+                            {
+                                MNodo n = new MNodo();
+                                n.setY(aux.getY()+1);
+                                n.setX(aux.getX());
+                                aux.setArriba(n);
+                                n.setAbajo(aux);
+                                n.setAtras(aux1.getArriba());
+                                aux1.getArriba().setSiguiente(n);
+                            }
+                            aux = aux.getArriba();
+                            aux1 = aux1.getArriba();
+                        }
+                    }else{
+                        while(aux != null)
+                        {
+                            if(aux.getY() < y && aux.getArriba() == null)
+                            {
+                                MNodo n = new MNodo();
+                                n.setY(aux.getY()+1);
+                                n.setX(aux.getX());
+                                aux.setArriba(n);
+                                n.setAbajo(aux);
+                            }
+                            aux = aux.getArriba();
+                        }
+                    }
+                }
+                
+                
+                if(tmp.getX() < x && tmp.getSiguiente() == null)
                 {
                     MNodo n = new MNodo();
                     n.setY(tmp.getY());
@@ -121,13 +215,23 @@ public class Matriz {
             }
         }
         
-        
-        
-        
     }
     
-    public void CrearX(){
-        
+    public void Mostrar(){
+        MNodo aux = Inicio;
+        MNodo tmp;
+        while(aux != null)
+        {
+            tmp = aux;
+            while(tmp != null)
+            {
+                System.out.print("("+tmp.getX()+","+tmp.getY()+")");
+                tmp = tmp.getSiguiente();
+            }
+            System.out.println(" ");
+                
+            aux = aux.getArriba();
+        }
     }
     public boolean MatrizVacia(){
         return Inicio == null;
