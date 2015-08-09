@@ -20,8 +20,8 @@ public class MNodo {
     public MNodo()
     {
         this.info = 0;
-        this.x = 0;
-        this.y = 0;
+        this.x = -1;
+        this.y = -1;
         this.Siguiente = null;
         this.Atras = null;
         this.Arriba = null;
