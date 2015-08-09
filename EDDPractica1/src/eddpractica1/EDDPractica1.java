@@ -17,18 +17,20 @@ public class EDDPractica1 {
     public static void main(String[] args) {
         // TODO code application logic here
         Matriz M = new Matriz();
-        M.Crear(5, 4);
+        M.Crear(2, 2);
         M.Mostrar();
-        System.out.println("*************");
-        M.Crear(3, 2);
+        System.out.println("-------------------------");
+        M.EliminarFila();
         M.Mostrar();
-        System.out.println("++++++++++++++");
-        M.Crear(6, 5);
+        System.out.println("-------------------------");
+        M.EliminarColumna();
         M.Mostrar();
-        System.out.println("++++++++++++++");
-        M.Crear(10, 10);
+        System.out.println("/////////////////////////");
+        M.EliminarColumna();
         M.Mostrar();
-        System.out.println("Hola Mundo");
+        System.out.println("/////////////////////////");
+        M.EliminarColumna();
+        M.Mostrar();
     }
     
 }

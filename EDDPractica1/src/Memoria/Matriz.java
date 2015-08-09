@@ -236,6 +236,72 @@ public class Matriz {
     public boolean MatrizVacia(){
         return Inicio == null;
     }
+   
+    public void EliminarFila(){
+        
+        if(!MatrizVacia())
+        {
+            MNodo aux = Inicio;
+            while(aux.getArriba() != null)
+            {
+                aux = aux.getArriba();
+            }
+            
+            MNodo tmp = aux.getSiguiente();
+            while(aux != null)
+            {
+                if(tmp != null)
+                {
+                    aux.getAbajo().setArriba(null);
+                    tmp.setAtras(null);
+                    aux = null;
+                    aux = tmp;
+                    tmp = tmp.getSiguiente();
+                }else{
+                    if(aux.getAbajo() != null)
+                    {
+                        aux.getAbajo().setArriba(null);
+                        aux = null;
+                    }else{
+                        Inicio = aux = null;
+                    }
+
+                }
+            }
+        }
+        
+    }
+    
+    public void EliminarColumna(){
+        if(!MatrizVacia())
+        {
+            MNodo aux = Inicio;
+            while(aux.getSiguiente() != null)
+            {
+                aux = aux.getSiguiente();
+            }
+            MNodo tmp = aux.getArriba();
+            while(aux != null)
+            {
+                if(tmp != null)
+                {
+                    aux.getAtras().setSiguiente(null);
+                    tmp.setAbajo(null);
+                    aux = null;
+                    aux = tmp;
+                    tmp = tmp.getArriba();
+                }else{
+                    if(aux.getAtras() != null)
+                    {
+                        aux.getAtras().setSiguiente(null);
+                        aux = null;
+                    }else{
+                        Inicio = aux = null;
+                    }
+                }
+            }
+        }
+    }
     
     public MNodo getInicio() {
         return Inicio;
