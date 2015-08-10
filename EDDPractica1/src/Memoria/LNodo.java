@@ -5,6 +5,8 @@
  */
 package Memoria;
 
+import javax.swing.JLabel;
+
 /**
  *
  * @author JP
@@ -12,14 +14,24 @@ package Memoria;
 public class LNodo {
     private String Nombre;
     private int Tipo;
+    private JLabel Imagen;
     private LNodo Siguiente;
     private LNodo Atras;
     public LNodo()
     {
         Nombre = "";
         Tipo = 0;
+        Imagen = null;
         Siguiente = null;
         Atras = null;
+    }
+
+    public JLabel getImagen() {
+        return Imagen;
+    }
+
+    public void setImagen(JLabel imagen) {
+        this.Imagen = imagen;
     }
 
     public int getTipo() {

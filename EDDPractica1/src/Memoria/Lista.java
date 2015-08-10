@@ -5,6 +5,9 @@
  */
 package Memoria;
 
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
 /**
  *
  * @author JP
@@ -17,11 +20,11 @@ public class Lista {
         Inicio = null;
         Fin = null;
     }
-    public void IngresarInicio(String nom, int tip)
+    public void IngresarInicio(String nom, JLabel ima)
     {
         LNodo nuevo = new LNodo();
         nuevo.setNombre(nom);
-        nuevo.setTipo(tip);
+        nuevo.setImagen(ima);
         if(ListaVacia())
         {
             setInicio(nuevo);
@@ -33,11 +36,11 @@ public class Lista {
         }
     }
     
-    public void IngresarFin(String nom, int tip)
+    public void IngresarFin(String nom, JLabel ima)
     {
         LNodo nuevo = new LNodo();
         nuevo.setNombre(nom);
-        nuevo.setTipo(tip);
+        nuevo.setImagen(ima);
         if(ListaVacia())
         {
             setInicio(nuevo);

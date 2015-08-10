@@ -10,6 +10,9 @@ import Memoria.Lista;
 import javax.swing.JPanel;
 import eddpractica1.*;
 import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
@@ -69,8 +72,8 @@ public class Carga extends javax.swing.JFrame {
         ACargar = new javax.swing.JPanel();
         Carga = new javax.swing.JLabel();
         PilaCola = new javax.swing.JComboBox();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        Elementos = new javax.swing.JPanel();
+        Elementos = new javax.swing.JScrollPane();
+        Elemento = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -94,18 +97,28 @@ public class Carga extends javax.swing.JFrame {
         );
         ParedLayout.setVerticalGroup(
             ParedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(LPared, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(LPared, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         ChPared.setBackground(new java.awt.Color(0, 0, 0));
         ChPared.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         ChPared.setForeground(new java.awt.Color(255, 255, 255));
         ChPared.setText("Pared");
+        ChPared.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                ChParedItemStateChanged(evt);
+            }
+        });
 
         ChSuelo.setBackground(new java.awt.Color(0, 0, 0));
         ChSuelo.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         ChSuelo.setForeground(new java.awt.Color(255, 255, 255));
         ChSuelo.setText("Suelo");
+        ChSuelo.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                ChSueloItemStateChanged(evt);
+            }
+        });
 
         Suelo.setBackground(new java.awt.Color(0, 0, 0));
         Suelo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
@@ -153,6 +166,11 @@ public class Carga extends javax.swing.JFrame {
         ChGoomba.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         ChGoomba.setForeground(new java.awt.Color(255, 255, 255));
         ChGoomba.setText("Goomba");
+        ChGoomba.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                ChGoombaItemStateChanged(evt);
+            }
+        });
 
         Koopa.setBackground(new java.awt.Color(0, 0, 0));
         Koopa.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
@@ -179,6 +197,11 @@ public class Carga extends javax.swing.JFrame {
         ChKoopa.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         ChKoopa.setForeground(new java.awt.Color(255, 255, 255));
         ChKoopa.setText("Koopa");
+        ChKoopa.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                ChKoopaItemStateChanged(evt);
+            }
+        });
 
         Ficha.setBackground(new java.awt.Color(0, 0, 0));
         Ficha.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
@@ -205,11 +228,21 @@ public class Carga extends javax.swing.JFrame {
         ChFicha.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         ChFicha.setForeground(new java.awt.Color(255, 255, 255));
         ChFicha.setText("Ficha");
+        ChFicha.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                ChFichaItemStateChanged(evt);
+            }
+        });
 
         ChHongo.setBackground(new java.awt.Color(0, 0, 0));
         ChHongo.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         ChHongo.setForeground(new java.awt.Color(255, 255, 255));
         ChHongo.setText("Hongo");
+        ChHongo.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                ChHongoItemStateChanged(evt);
+            }
+        });
 
         Hongo.setBackground(new java.awt.Color(0, 0, 0));
         Hongo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
@@ -258,9 +291,9 @@ public class Carga extends javax.swing.JFrame {
         ChPersonaje.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         ChPersonaje.setForeground(new java.awt.Color(255, 255, 255));
         ChPersonaje.setText("Personaje");
-        ChPersonaje.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ChPersonajeActionPerformed(evt);
+        ChPersonaje.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                ChPersonajeItemStateChanged(evt);
             }
         });
 
@@ -289,6 +322,11 @@ public class Carga extends javax.swing.JFrame {
         ChCastillo.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         ChCastillo.setForeground(new java.awt.Color(255, 255, 255));
         ChCastillo.setText("Castillo");
+        ChCastillo.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                ChCastilloItemStateChanged(evt);
+            }
+        });
 
         javax.swing.GroupLayout ComponentesLayout = new javax.swing.GroupLayout(Componentes);
         Componentes.setLayout(ComponentesLayout);
@@ -349,11 +387,11 @@ public class Carga extends javax.swing.JFrame {
                         .addComponent(ChCastillo)))
                 .addGroup(ComponentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ComponentesLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(Pared, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(ComponentesLayout.createSequentialGroup()
                         .addGap(29, 29, 29)
-                        .addComponent(ChPared)))
+                        .addComponent(ChPared))
+                    .addGroup(ComponentesLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(Pared, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(ComponentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ComponentesLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
@@ -465,7 +503,7 @@ public class Carga extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(Nombre, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(66, 66, 66)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -490,23 +528,12 @@ public class Carga extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jScrollPane1.setBackground(new java.awt.Color(0, 0, 0));
-        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        Elementos.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        Elementos.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
-        Elementos.setBackground(new java.awt.Color(0, 0, 0));
-
-        javax.swing.GroupLayout ElementosLayout = new javax.swing.GroupLayout(Elementos);
-        Elementos.setLayout(ElementosLayout);
-        ElementosLayout.setHorizontalGroup(
-            ElementosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 171, Short.MAX_VALUE)
-        );
-        ElementosLayout.setVerticalGroup(
-            ElementosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 603, Short.MAX_VALUE)
-        );
-
-        jScrollPane1.setViewportView(Elementos);
+        Elemento.setBackground(new java.awt.Color(0, 0, 0));
+        Elemento.setLayout(null);
+        Elementos.setViewportView(Elemento);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -518,21 +545,18 @@ public class Carga extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Elementos, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Componentes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Componentes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Elementos, javax.swing.GroupLayout.PREFERRED_SIZE, 596, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -591,9 +615,9 @@ public class Carga extends javax.swing.JFrame {
                 {
                     if(PilaCola.getSelectedIndex() == 0)
                     {
-                        L.IngresarInicio(Nombre.getText(), 1);
+                        L.IngresarInicio(Nombre.getText(), LPersonaje);
                     }else{
-                        L.IngresarFin(Nombre.getText(), 1);
+                        L.IngresarFin(Nombre.getText(), LPersonaje);
                     }
                 }
             }
@@ -606,9 +630,9 @@ public class Carga extends javax.swing.JFrame {
                 {
                     if(PilaCola.getSelectedIndex() == 0)
                     {
-                        L.IngresarInicio(Nombre.getText(), 2);
+                        L.IngresarInicio(Nombre.getText(), LCastillo);
                     }else{
-                        L.IngresarFin(Nombre.getText(), 2);
+                        L.IngresarFin(Nombre.getText(), LCastillo);
                     }
                 }
             }
@@ -621,9 +645,9 @@ public class Carga extends javax.swing.JFrame {
                 {
                     if(PilaCola.getSelectedIndex() == 0)
                     {
-                        L.IngresarInicio(Nombre.getText(), 3);
+                        L.IngresarInicio(Nombre.getText(), LSuelo);
                     }else{
-                        L.IngresarFin(Nombre.getText(), 3);
+                        L.IngresarFin(Nombre.getText(), LSuelo);
                     }
                 }
             }
@@ -637,9 +661,9 @@ public class Carga extends javax.swing.JFrame {
                 {
                     if(PilaCola.getSelectedIndex() == 0)
                     {
-                        L.IngresarInicio(Nombre.getText(), 4);
+                        L.IngresarInicio(Nombre.getText(), LPared);
                     }else{
-                        L.IngresarFin(Nombre.getText(), 4);
+                        L.IngresarFin(Nombre.getText(), LPared);
                     }
                 }
             }
@@ -652,9 +676,9 @@ public class Carga extends javax.swing.JFrame {
                 {
                     if(PilaCola.getSelectedIndex() == 0)
                     {
-                        L.IngresarInicio(Nombre.getText(), 5);
+                        L.IngresarInicio(Nombre.getText(), LGoomba);
                     }else{
-                        L.IngresarFin(Nombre.getText(), 5);
+                        L.IngresarFin(Nombre.getText(), LGoomba);
                     }
                 }
             }
@@ -667,9 +691,9 @@ public class Carga extends javax.swing.JFrame {
                 {
                     if(PilaCola.getSelectedIndex() == 0)
                     {
-                        L.IngresarInicio(Nombre.getText(), 6);
+                        L.IngresarInicio(Nombre.getText(), LKoopa);
                     }else{
-                        L.IngresarFin(Nombre.getText(), 6);
+                        L.IngresarFin(Nombre.getText(), LKoopa);
                     }
                 }
             }
@@ -682,9 +706,9 @@ public class Carga extends javax.swing.JFrame {
                 {
                     if(PilaCola.getSelectedIndex() == 0)
                     {
-                        L.IngresarInicio(Nombre.getText(), 7);
+                        L.IngresarInicio(Nombre.getText(), LHongo);
                     }else{
-                        L.IngresarFin(Nombre.getText(), 7);
+                        L.IngresarFin(Nombre.getText(), LHongo);
                     }
                 }
             }
@@ -697,13 +721,55 @@ public class Carga extends javax.swing.JFrame {
                 {
                     if(PilaCola.getSelectedIndex() == 0)
                     {
-                        L.IngresarInicio(Nombre.getText(), 8);
+                        L.IngresarInicio(Nombre.getText(), LFicha);
                     }else{
-                        L.IngresarFin(Nombre.getText(), 8);
+                        L.IngresarFin(Nombre.getText(), LFicha);
                     }
                 }
             }
         }
+        
+            Elemento.removeAll();
+            
+            LNodo aux = L.getInicio();
+            int i = 0;
+            while(aux != null){
+                JPanel p = new JPanel();
+                JLabel l = new JLabel();
+                JLabel la = new JLabel();
+                p.setLayout(null);
+                p.setBounds(15, 15 + i, 145, 65);
+                p.setBackground(Color.BLACK);
+                p.setBorder(BorderFactory.createLineBorder(Color.WHITE));
+                
+                l.setText(aux.getNombre());
+                l.setForeground(Color.WHITE);
+                Font fuente=new Font("Comic Sans MS", Font.PLAIN, 14);
+                l.setFont(fuente);
+                l.setBounds(60, 5, 80, 50);
+                
+                la.setBounds(5, 5, 53, 53);
+                la.setIcon(aux.getImagen().getIcon());
+                
+                p.add(la);
+                p.add(l);
+                p.setVisible(true);
+                l.setVisible(true);
+                la.setVisible(true);
+                p.repaint();
+                
+                Elemento.add(p);
+                i = i + 80;
+                aux = aux.getSiguiente();
+            }
+            Elementos.setViewportView(Elemento);
+            Elementos.getViewport().setView(Elemento);
+            Elemento.setLayout(null);
+            Elemento.setPreferredSize(new Dimension(188,i+14));
+            
+            Elementos.repaint();
+            
+            
         
             ChGoomba.setSelected(false);
             Carga.setIcon(null);
@@ -715,68 +781,6 @@ public class Carga extends javax.swing.JFrame {
             ChHongo.setSelected(false);
             ChPersonaje.setSelected(false);
             ChCastillo.setSelected(false);
-            
-            LNodo aux = L.getInicio();
-            int i = 0;
-            while(aux != null){
-                JPanel p = new JPanel();
-                JLabel l = new JLabel();
-                JLabel la = new JLabel();
-                l.setText(aux.getNombre());
-                l.setForeground(Color.WHITE);
-                l.setLocation(20, 100 + i);
-                p.setBounds(15, 15 + i, 53, 53);
-                p.setBackground(Color.red);
-                la.setBounds(0, 0, 53, 53);
-                
-                ImageIcon icono;
-                
-                switch (aux.getTipo())
-                {
-                    case 1:
-                        icono = new ImageIcon("Imagenes/personaje.png");  
-                        la.setIcon(icono);
-                        break;
-                    case 2:
-                        icono = new ImageIcon("Imagenes/castillo.jpg");  
-                        la.setIcon(icono);
-                        break;
-                    case 3:
-                        icono = new ImageIcon("Imagenes/suelo.png");  
-                        la.setIcon(icono);
-                        break;
-                    case 4:
-                        icono = new ImageIcon("Imagenes/muro.png");  
-                        la.setIcon(icono);
-                        break;
-                    case 5:
-                        icono = new ImageIcon("Imagenes/goomba.png");  
-                        la.setIcon(icono);
-                        break;
-                    case 6:
-                        icono = new ImageIcon("Imagenes/koopa.png");  
-                        la.setIcon(icono);
-                        break;
-                    case 7:
-                        icono = new ImageIcon("Imagenes/hongo.png");  
-                        la.setIcon(icono);
-                        break;
-                    case 8:
-                        icono = new ImageIcon("Imagenes/moneda.png");  
-                        la.setIcon(icono);
-                        break;
-                }
-                p.add(la);
-                p.setVisible(true);
-                l.setVisible(true);
-                la.setVisible(true);
-                p.repaint();
-                Elementos.add(p);
-                i = i + 75;
-                aux = aux.getSiguiente();
-            }
-            Elementos.repaint();
-        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void GoombaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GoombaMouseClicked
@@ -897,9 +901,166 @@ public class Carga extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ACargarMouseClicked
 
-    private void ChPersonajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChPersonajeActionPerformed
+    private void ChPersonajeItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ChPersonajeItemStateChanged
         // TODO add your handling code here:
-    }//GEN-LAST:event_ChPersonajeActionPerformed
+        if(!ChPersonaje.isSelected())
+        {
+            ChPersonaje.setSelected(false);
+            Carga.setIcon(null);
+        }else{
+            ChCastillo.setSelected(false);
+            ChPared.setSelected(false);
+            ChSuelo.setSelected(false);
+            ChGoomba.setSelected(false);
+            ChKoopa.setSelected(false);
+            ChFicha.setSelected(false);
+            ChHongo.setSelected(false);
+            ChPersonaje.setSelected(true);
+            Carga.setIcon(LPersonaje.getIcon());
+            Carga.repaint();
+        }
+    }//GEN-LAST:event_ChPersonajeItemStateChanged
+
+    private void ChCastilloItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ChCastilloItemStateChanged
+        // TODO add your handling code here:
+        if(!ChCastillo.isSelected())
+        {
+            ChCastillo.setSelected(false);
+            Carga.setIcon(null);
+        }else{
+            ChCastillo.setSelected(true);
+            ChPared.setSelected(false);
+            ChSuelo.setSelected(false);
+            ChGoomba.setSelected(false);
+            ChKoopa.setSelected(false);
+            ChFicha.setSelected(false);
+            ChHongo.setSelected(false);
+            ChPersonaje.setSelected(false);
+            
+            Carga.setIcon(LCastillo.getIcon());
+            Carga.repaint();
+        }
+    }//GEN-LAST:event_ChCastilloItemStateChanged
+
+    private void ChParedItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ChParedItemStateChanged
+        // TODO add your handling code here:
+        if(!ChPared.isSelected())
+        {
+            ChPared.setSelected(false);
+            Carga.setIcon(null);
+        }else{
+            ChCastillo.setSelected(false);
+            ChPared.setSelected(true);
+            ChSuelo.setSelected(false);
+            ChGoomba.setSelected(false);
+            ChKoopa.setSelected(false);
+            ChFicha.setSelected(false);
+            ChHongo.setSelected(false);
+            ChPersonaje.setSelected(false);
+            Carga.setIcon(LPared.getIcon());
+            Carga.repaint();
+        }
+    }//GEN-LAST:event_ChParedItemStateChanged
+
+    private void ChSueloItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ChSueloItemStateChanged
+        // TODO add your handling code here:
+        if(!ChSuelo.isSelected())
+        {
+            ChSuelo.setSelected(false);
+            Carga.setIcon(null);
+        }else{
+            ChCastillo.setSelected(false);
+            ChPared.setSelected(false);
+            ChSuelo.setSelected(true);
+            ChGoomba.setSelected(false);
+            ChKoopa.setSelected(false);
+            ChFicha.setSelected(false);
+            ChHongo.setSelected(false);
+            ChPersonaje.setSelected(false);
+            Carga.setIcon(LSuelo.getIcon());
+            Carga.repaint();
+        }
+    }//GEN-LAST:event_ChSueloItemStateChanged
+
+    private void ChGoombaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ChGoombaItemStateChanged
+        // TODO add your handling code here:
+        if(!ChGoomba.isSelected())
+        {
+            ChGoomba.setSelected(false);
+            Carga.setIcon(null);
+        }else{
+            ChCastillo.setSelected(false);
+            ChPared.setSelected(false);
+            ChSuelo.setSelected(false);
+            ChGoomba.setSelected(true);
+            ChKoopa.setSelected(false);
+            ChFicha.setSelected(false);
+            ChHongo.setSelected(false);
+            ChPersonaje.setSelected(false);
+            Carga.setIcon(LGoomba.getIcon());
+            Carga.repaint();
+        }
+    }//GEN-LAST:event_ChGoombaItemStateChanged
+
+    private void ChKoopaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ChKoopaItemStateChanged
+        // TODO add your handling code here:
+        if(!ChKoopa.isSelected())
+        {
+            ChKoopa.setSelected(false);
+            Carga.setIcon(null);
+        }else{
+            ChCastillo.setSelected(false);
+            ChPared.setSelected(false);
+            ChSuelo.setSelected(false);
+            ChGoomba.setSelected(false);
+            ChKoopa.setSelected(true);
+            ChFicha.setSelected(false);
+            ChHongo.setSelected(false);
+            ChPersonaje.setSelected(false);
+            Carga.setIcon(LKoopa.getIcon());
+            Carga.repaint();
+        }
+    }//GEN-LAST:event_ChKoopaItemStateChanged
+
+    private void ChFichaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ChFichaItemStateChanged
+        // TODO add your handling code here:
+        if(!ChFicha.isSelected())
+        {
+            ChFicha.setSelected(false);
+            Carga.setIcon(null);
+        }else{
+            ChCastillo.setSelected(false);
+            ChPared.setSelected(false);
+            ChSuelo.setSelected(false);
+            ChGoomba.setSelected(false);
+            ChKoopa.setSelected(false);
+            ChFicha.setSelected(true);
+            ChHongo.setSelected(false);
+            ChPersonaje.setSelected(false);
+            Carga.setIcon(LFicha.getIcon());
+            Carga.repaint();
+        }
+    }//GEN-LAST:event_ChFichaItemStateChanged
+
+    private void ChHongoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ChHongoItemStateChanged
+        // TODO add your handling code here:
+        if(!ChHongo.isSelected())
+        {
+            ChHongo.setSelected(false);
+            Carga.setIcon(null);
+        }else{
+            ChCastillo.setSelected(false);
+            ChPared.setSelected(false);
+            ChSuelo.setSelected(false);
+            ChGoomba.setSelected(false);
+            ChKoopa.setSelected(false);
+            ChFicha.setSelected(false);
+            ChHongo.setSelected(true);
+            ChPersonaje.setSelected(false);
+            Carga.setIcon(LHongo.getIcon());
+            Carga.repaint();
+        }
+    }//GEN-LAST:event_ChHongoItemStateChanged
 
     
     public JPanel getPared(){
@@ -957,7 +1118,8 @@ public class Carga extends javax.swing.JFrame {
     private javax.swing.JCheckBox ChPersonaje;
     private javax.swing.JCheckBox ChSuelo;
     private javax.swing.JPanel Componentes;
-    private javax.swing.JPanel Elementos;
+    private javax.swing.JPanel Elemento;
+    private javax.swing.JScrollPane Elementos;
     private javax.swing.JPanel Ficha;
     private javax.swing.JPanel Goomba;
     private javax.swing.JPanel Hongo;
@@ -979,6 +1141,5 @@ public class Carga extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
