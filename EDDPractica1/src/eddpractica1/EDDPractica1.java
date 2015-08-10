@@ -5,6 +5,8 @@
  */
 package eddpractica1;
 import Memoria.*;
+import Interfaz.*;
+import Figura.*;
 /**
  *
  * @author JP
@@ -22,7 +24,14 @@ public class EDDPractica1 {
         System.out.println("-------------------------");
         M.EliminarFila();
         M.Mostrar();
-        
+        //Inicio Principal = new Inicio();
+        //Principal.show(true);
+        Carga c = new Carga();
+        c.show(true);
+        Pared p = new Pared(c.getPared());
+        p.CrearPared();
+        Suelo s = new Suelo(c.getSuelo());
+        s.CrearSuelo();
     }
     
 }
