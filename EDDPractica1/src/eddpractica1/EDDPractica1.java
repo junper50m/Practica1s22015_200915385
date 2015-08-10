@@ -26,12 +26,14 @@ public class EDDPractica1 {
         M.Mostrar();
         //Inicio Principal = new Inicio();
         //Principal.show(true);
+        Lista L = new Lista();
         Carga c = new Carga();
+        c.setLista(L);
         c.show(true);
-        Pared p = new Pared(c.getPared());
-        p.CrearPared();
-        Suelo s = new Suelo(c.getSuelo());
-        s.CrearSuelo();
+        //Pared p = new Pared(c.getPared());
+        //p.CrearPared();
+        //Suelo s = new Suelo(c.getSuelo());
+        //s.CrearSuelo();
     }
     
 }

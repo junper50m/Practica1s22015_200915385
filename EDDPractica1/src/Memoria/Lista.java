@@ -17,10 +17,11 @@ public class Lista {
         Inicio = null;
         Fin = null;
     }
-    public void IngresarInicio(int i)
+    public void IngresarInicio(String nom, int tip)
     {
         LNodo nuevo = new LNodo();
-        nuevo.setInfo(i);
+        nuevo.setNombre(nom);
+        nuevo.setTipo(tip);
         if(ListaVacia())
         {
             setInicio(nuevo);
@@ -32,10 +33,11 @@ public class Lista {
         }
     }
     
-    public void IngresarFin(int i)
+    public void IngresarFin(String nom, int tip)
     {
         LNodo nuevo = new LNodo();
-        nuevo.setInfo(i);
+        nuevo.setNombre(nom);
+        nuevo.setTipo(tip);
         if(ListaVacia())
         {
             setInicio(nuevo);

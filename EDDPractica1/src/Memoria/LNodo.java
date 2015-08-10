@@ -10,22 +10,32 @@ package Memoria;
  * @author JP
  */
 public class LNodo {
-    private int info;
+    private String Nombre;
+    private int Tipo;
     private LNodo Siguiente;
     private LNodo Atras;
     public LNodo()
     {
-        info = 0;
+        Nombre = "";
+        Tipo = 0;
         Siguiente = null;
         Atras = null;
     }
 
-    public int getInfo() {
-        return info;
+    public int getTipo() {
+        return Tipo;
     }
 
-    public void setInfo(int info) {
-        this.info = info;
+    public void setTipo(int tipo) {
+        this.Tipo = tipo;
+    }
+
+    public String getNombre() {
+        return Nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.Nombre = nombre;
     }
 
     public LNodo getSiguiente() {

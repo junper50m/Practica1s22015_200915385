@@ -5,8 +5,13 @@
  */
 package Interfaz;
 
-import java.awt.Color;
+import Memoria.LNodo;
+import Memoria.Lista;
 import javax.swing.JPanel;
+import eddpractica1.*;
+import java.awt.Color;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
 /**
  *
@@ -20,6 +25,7 @@ public class Carga extends javax.swing.JFrame {
     public Carga() {
         initComponents();
     }
+    Lista L;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -32,11 +38,39 @@ public class Carga extends javax.swing.JFrame {
 
         Componentes = new javax.swing.JPanel();
         Pared = new javax.swing.JPanel();
+        LPared = new javax.swing.JLabel();
         ChPared = new javax.swing.JCheckBox();
         ChSuelo = new javax.swing.JCheckBox();
         Suelo = new javax.swing.JPanel();
-        Elementos = new javax.swing.JPanel();
+        LSuelo = new javax.swing.JLabel();
+        Goomba = new javax.swing.JPanel();
+        LGoomba = new javax.swing.JLabel();
+        ChGoomba = new javax.swing.JCheckBox();
+        Koopa = new javax.swing.JPanel();
+        LKoopa = new javax.swing.JLabel();
+        ChKoopa = new javax.swing.JCheckBox();
+        Ficha = new javax.swing.JPanel();
+        LFicha = new javax.swing.JLabel();
+        ChFicha = new javax.swing.JCheckBox();
+        ChHongo = new javax.swing.JCheckBox();
+        Hongo = new javax.swing.JPanel();
+        LHongo = new javax.swing.JLabel();
+        Personaje = new javax.swing.JPanel();
+        LPersonaje = new javax.swing.JLabel();
+        ChPersonaje = new javax.swing.JCheckBox();
+        Castillo = new javax.swing.JPanel();
+        LCastillo = new javax.swing.JLabel();
+        ChCastillo = new javax.swing.JCheckBox();
+        jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        Nombre = new javax.swing.JTextField();
+        jPanel2 = new javax.swing.JPanel();
+        ACargar = new javax.swing.JPanel();
+        Carga = new javax.swing.JLabel();
+        PilaCola = new javax.swing.JComboBox();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        Elementos = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -50,15 +84,17 @@ public class Carga extends javax.swing.JFrame {
             }
         });
 
+        LPared.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/muro.png"))); // NOI18N
+
         javax.swing.GroupLayout ParedLayout = new javax.swing.GroupLayout(Pared);
         Pared.setLayout(ParedLayout);
         ParedLayout.setHorizontalGroup(
             ParedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 53, Short.MAX_VALUE)
+            .addComponent(LPared, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         ParedLayout.setVerticalGroup(
             ParedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 53, Short.MAX_VALUE)
+            .addComponent(LPared, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         ChPared.setBackground(new java.awt.Color(0, 0, 0));
@@ -79,65 +115,284 @@ public class Carga extends javax.swing.JFrame {
             }
         });
 
+        LSuelo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/suelo.png"))); // NOI18N
+
         javax.swing.GroupLayout SueloLayout = new javax.swing.GroupLayout(Suelo);
         Suelo.setLayout(SueloLayout);
         SueloLayout.setHorizontalGroup(
             SueloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 53, Short.MAX_VALUE)
+            .addComponent(LSuelo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         SueloLayout.setVerticalGroup(
             SueloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 53, Short.MAX_VALUE)
+            .addComponent(LSuelo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
+
+        Goomba.setBackground(new java.awt.Color(0, 0, 0));
+        Goomba.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        Goomba.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                GoombaMouseClicked(evt);
+            }
+        });
+
+        LGoomba.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/goomba.png"))); // NOI18N
+
+        javax.swing.GroupLayout GoombaLayout = new javax.swing.GroupLayout(Goomba);
+        Goomba.setLayout(GoombaLayout);
+        GoombaLayout.setHorizontalGroup(
+            GoombaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LGoomba, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
+        );
+        GoombaLayout.setVerticalGroup(
+            GoombaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LGoomba, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        ChGoomba.setBackground(new java.awt.Color(0, 0, 0));
+        ChGoomba.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        ChGoomba.setForeground(new java.awt.Color(255, 255, 255));
+        ChGoomba.setText("Goomba");
+
+        Koopa.setBackground(new java.awt.Color(0, 0, 0));
+        Koopa.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        Koopa.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                KoopaMouseClicked(evt);
+            }
+        });
+
+        LKoopa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/koopa.png"))); // NOI18N
+
+        javax.swing.GroupLayout KoopaLayout = new javax.swing.GroupLayout(Koopa);
+        Koopa.setLayout(KoopaLayout);
+        KoopaLayout.setHorizontalGroup(
+            KoopaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LKoopa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        KoopaLayout.setVerticalGroup(
+            KoopaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LKoopa, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
+        );
+
+        ChKoopa.setBackground(new java.awt.Color(0, 0, 0));
+        ChKoopa.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        ChKoopa.setForeground(new java.awt.Color(255, 255, 255));
+        ChKoopa.setText("Koopa");
+
+        Ficha.setBackground(new java.awt.Color(0, 0, 0));
+        Ficha.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        Ficha.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                FichaMouseClicked(evt);
+            }
+        });
+
+        LFicha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/moneda.png"))); // NOI18N
+
+        javax.swing.GroupLayout FichaLayout = new javax.swing.GroupLayout(Ficha);
+        Ficha.setLayout(FichaLayout);
+        FichaLayout.setHorizontalGroup(
+            FichaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LFicha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        FichaLayout.setVerticalGroup(
+            FichaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LFicha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        ChFicha.setBackground(new java.awt.Color(0, 0, 0));
+        ChFicha.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        ChFicha.setForeground(new java.awt.Color(255, 255, 255));
+        ChFicha.setText("Ficha");
+
+        ChHongo.setBackground(new java.awt.Color(0, 0, 0));
+        ChHongo.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        ChHongo.setForeground(new java.awt.Color(255, 255, 255));
+        ChHongo.setText("Hongo");
+
+        Hongo.setBackground(new java.awt.Color(0, 0, 0));
+        Hongo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        Hongo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                HongoMouseClicked(evt);
+            }
+        });
+
+        LHongo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/hongo.png"))); // NOI18N
+
+        javax.swing.GroupLayout HongoLayout = new javax.swing.GroupLayout(Hongo);
+        Hongo.setLayout(HongoLayout);
+        HongoLayout.setHorizontalGroup(
+            HongoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LHongo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        HongoLayout.setVerticalGroup(
+            HongoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LHongo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        Personaje.setBackground(new java.awt.Color(0, 0, 0));
+        Personaje.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        Personaje.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PersonajeMouseClicked(evt);
+            }
+        });
+
+        LPersonaje.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/personaje.png"))); // NOI18N
+        LPersonaje.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        javax.swing.GroupLayout PersonajeLayout = new javax.swing.GroupLayout(Personaje);
+        Personaje.setLayout(PersonajeLayout);
+        PersonajeLayout.setHorizontalGroup(
+            PersonajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LPersonaje, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
+        );
+        PersonajeLayout.setVerticalGroup(
+            PersonajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LPersonaje, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        ChPersonaje.setBackground(new java.awt.Color(0, 0, 0));
+        ChPersonaje.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        ChPersonaje.setForeground(new java.awt.Color(255, 255, 255));
+        ChPersonaje.setText("Personaje");
+        ChPersonaje.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ChPersonajeActionPerformed(evt);
+            }
+        });
+
+        Castillo.setBackground(new java.awt.Color(0, 0, 0));
+        Castillo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        Castillo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CastilloMouseClicked(evt);
+            }
+        });
+
+        LCastillo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/castillo.jpg"))); // NOI18N
+
+        javax.swing.GroupLayout CastilloLayout = new javax.swing.GroupLayout(Castillo);
+        Castillo.setLayout(CastilloLayout);
+        CastilloLayout.setHorizontalGroup(
+            CastilloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LCastillo, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
+        );
+        CastilloLayout.setVerticalGroup(
+            CastilloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LCastillo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        ChCastillo.setBackground(new java.awt.Color(0, 0, 0));
+        ChCastillo.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        ChCastillo.setForeground(new java.awt.Color(255, 255, 255));
+        ChCastillo.setText("Castillo");
 
         javax.swing.GroupLayout ComponentesLayout = new javax.swing.GroupLayout(Componentes);
         Componentes.setLayout(ComponentesLayout);
         ComponentesLayout.setHorizontalGroup(
             ComponentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ComponentesLayout.createSequentialGroup()
-                .addContainerGap(20, Short.MAX_VALUE)
-                .addGroup(ComponentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(ComponentesLayout.createSequentialGroup()
-                        .addComponent(ChSuelo, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(Suelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(ComponentesLayout.createSequentialGroup()
-                        .addComponent(ChPared, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(Pared, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(20, 20, 20))
+            .addGroup(ComponentesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(ComponentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ComponentesLayout.createSequentialGroup()
+                        .addGroup(ComponentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(ComponentesLayout.createSequentialGroup()
+                                .addComponent(ChHongo, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Hongo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(ComponentesLayout.createSequentialGroup()
+                                .addComponent(ChGoomba, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(31, 31, 31)
+                                .addComponent(Goomba, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(ComponentesLayout.createSequentialGroup()
+                                .addComponent(ChKoopa, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(31, 31, 31)
+                                .addComponent(Koopa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(ComponentesLayout.createSequentialGroup()
+                                .addComponent(ChFicha, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(31, 31, 31)
+                                .addComponent(Ficha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(28, 28, 28))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ComponentesLayout.createSequentialGroup()
+                        .addGroup(ComponentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ChPersonaje, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ChCastillo, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ChPared, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ChSuelo, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(ComponentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Suelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Pared, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Personaje, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Castillo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(29, 29, 29))))
         );
         ComponentesLayout.setVerticalGroup(
             ComponentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ComponentesLayout.createSequentialGroup()
                 .addGroup(ComponentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ComponentesLayout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(ChPared))
+                        .addGap(19, 19, 19)
+                        .addComponent(Personaje, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(ComponentesLayout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(Pared, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
+                        .addGap(30, 30, 30)
+                        .addComponent(ChPersonaje)))
                 .addGroup(ComponentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ComponentesLayout.createSequentialGroup()
-                        .addGap(11, 11, 11)
-                        .addComponent(ChSuelo))
-                    .addComponent(Suelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(Castillo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(ComponentesLayout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(ChCastillo)))
+                .addGroup(ComponentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ComponentesLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(Pared, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(ComponentesLayout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(ChPared)))
+                .addGroup(ComponentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ComponentesLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(Suelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(ComponentesLayout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addComponent(ChSuelo)))
+                .addGroup(ComponentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ComponentesLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(Goomba, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(ComponentesLayout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(ChGoomba)))
+                .addGroup(ComponentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ComponentesLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(Koopa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(ComponentesLayout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(ChKoopa)))
+                .addGroup(ComponentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ComponentesLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(Ficha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(ComponentesLayout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(ChFicha)))
+                .addGroup(ComponentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ComponentesLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(Hongo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(ComponentesLayout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(ChHongo)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        Elementos.setBackground(new java.awt.Color(0, 0, 0));
-
-        javax.swing.GroupLayout ElementosLayout = new javax.swing.GroupLayout(Elementos);
-        Elementos.setLayout(ElementosLayout);
-        ElementosLayout.setHorizontalGroup(
-            ElementosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 297, Short.MAX_VALUE)
-        );
-        ElementosLayout.setVerticalGroup(
-            ElementosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
         jButton1.setText("Cargar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -146,17 +401,124 @@ public class Carga extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Nombre");
+        jLabel1.setFocusable(false);
+
+        Nombre.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+
+        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+
+        ACargar.setBackground(new java.awt.Color(0, 0, 0));
+        ACargar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        ACargar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ACargarMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout ACargarLayout = new javax.swing.GroupLayout(ACargar);
+        ACargar.setLayout(ACargarLayout);
+        ACargarLayout.setHorizontalGroup(
+            ACargarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Carga, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
+        );
+        ACargarLayout.setVerticalGroup(
+            ACargarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Carga, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGap(58, 58, 58)
+                    .addComponent(ACargar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(58, Short.MAX_VALUE)))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 121, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGap(33, 33, 33)
+                    .addComponent(ACargar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(33, Short.MAX_VALUE)))
+        );
+
+        PilaCola.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Pila", "Cola" }));
+        PilaCola.setSelectedIndex(-1);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Nombre, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(66, 66, 66)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(PilaCola, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(95, 95, 95)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(PilaCola, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jScrollPane1.setBackground(new java.awt.Color(0, 0, 0));
+        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+
+        Elementos.setBackground(new java.awt.Color(0, 0, 0));
+
+        javax.swing.GroupLayout ElementosLayout = new javax.swing.GroupLayout(Elementos);
+        Elementos.setLayout(ElementosLayout);
+        ElementosLayout.setHorizontalGroup(
+            ElementosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 171, Short.MAX_VALUE)
+        );
+        ElementosLayout.setVerticalGroup(
+            ElementosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 603, Short.MAX_VALUE)
+        );
+
+        jScrollPane1.setViewportView(Elementos);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Componentes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
-                .addComponent(Elementos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Componentes, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -164,13 +526,13 @@ public class Carga extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Componentes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Elementos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Componentes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(340, Short.MAX_VALUE))
         );
 
         pack();
@@ -182,8 +544,17 @@ public class Carga extends javax.swing.JFrame {
         if(ChPared.isSelected())
         {
             ChPared.setSelected(false);
+            Carga.setIcon(null);
         }else{
             ChPared.setSelected(true);
+            Carga.setIcon(LPared.getIcon());
+            ChSuelo.setSelected(false);
+            ChGoomba.setSelected(false);
+            ChKoopa.setSelected(false);
+            ChFicha.setSelected(false);
+            ChHongo.setSelected(false);
+            ChPersonaje.setSelected(false);
+            ChCastillo.setSelected(false);
         }
         
     }//GEN-LAST:event_ParedMouseClicked
@@ -193,15 +564,342 @@ public class Carga extends javax.swing.JFrame {
         if(ChSuelo.isSelected())
         {
             ChSuelo.setSelected(false);
+            Carga.setIcon(null);
         }else{
             ChSuelo.setSelected(true);
+            Carga.setIcon(LSuelo.getIcon());
+            ChPared.setSelected(false);
+            ChGoomba.setSelected(false);
+            ChKoopa.setSelected(false);
+            ChFicha.setSelected(false);
+            ChHongo.setSelected(false);
+            ChPersonaje.setSelected(false);
+            ChCastillo.setSelected(false);
         }
     }//GEN-LAST:event_SueloMouseClicked
 
+    public void setLista(Lista l){
+        L = l;
+    }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        Elementos.setBackground(new Color(170, 230, 0));
+        //Elementos.setBackground(new Color(170, 230, 0));
+        if(ChPersonaje.isSelected()){
+            if(!"".equals(Nombre.getText()))
+            {
+                if(PilaCola.getSelectedIndex() != -1)
+                {
+                    if(PilaCola.getSelectedIndex() == 0)
+                    {
+                        L.IngresarInicio(Nombre.getText(), 1);
+                    }else{
+                        L.IngresarFin(Nombre.getText(), 1);
+                    }
+                }
+            }
+        }
+        
+        if(ChCastillo.isSelected()){
+            if(!"".equals(Nombre.getText()))
+            {
+                if(PilaCola.getSelectedIndex() != -1)
+                {
+                    if(PilaCola.getSelectedIndex() == 0)
+                    {
+                        L.IngresarInicio(Nombre.getText(), 2);
+                    }else{
+                        L.IngresarFin(Nombre.getText(), 2);
+                    }
+                }
+            }
+        }
+        
+        if(ChSuelo.isSelected()){
+            if(!"".equals(Nombre.getText()))
+            {
+                if(PilaCola.getSelectedIndex() != -1)
+                {
+                    if(PilaCola.getSelectedIndex() == 0)
+                    {
+                        L.IngresarInicio(Nombre.getText(), 3);
+                    }else{
+                        L.IngresarFin(Nombre.getText(), 3);
+                    }
+                }
+            }
+        }
+        
+        
+        if(ChPared.isSelected()){
+            if(!"".equals(Nombre.getText()))
+            {
+                if(PilaCola.getSelectedIndex() != -1)
+                {
+                    if(PilaCola.getSelectedIndex() == 0)
+                    {
+                        L.IngresarInicio(Nombre.getText(), 4);
+                    }else{
+                        L.IngresarFin(Nombre.getText(), 4);
+                    }
+                }
+            }
+        }
+        
+        if(ChGoomba.isSelected()){
+            if(!"".equals(Nombre.getText()))
+            {
+                if(PilaCola.getSelectedIndex() != -1)
+                {
+                    if(PilaCola.getSelectedIndex() == 0)
+                    {
+                        L.IngresarInicio(Nombre.getText(), 5);
+                    }else{
+                        L.IngresarFin(Nombre.getText(), 5);
+                    }
+                }
+            }
+        }
+        
+        if(ChKoopa.isSelected()){
+            if(!"".equals(Nombre.getText()))
+            {
+                if(PilaCola.getSelectedIndex() != -1)
+                {
+                    if(PilaCola.getSelectedIndex() == 0)
+                    {
+                        L.IngresarInicio(Nombre.getText(), 6);
+                    }else{
+                        L.IngresarFin(Nombre.getText(), 6);
+                    }
+                }
+            }
+        }
+        
+        if(ChHongo.isSelected()){
+            if(!"".equals(Nombre.getText()))
+            {
+                if(PilaCola.getSelectedIndex() != -1)
+                {
+                    if(PilaCola.getSelectedIndex() == 0)
+                    {
+                        L.IngresarInicio(Nombre.getText(), 7);
+                    }else{
+                        L.IngresarFin(Nombre.getText(), 7);
+                    }
+                }
+            }
+        }
+        
+        if(ChFicha.isSelected()){
+            if(!"".equals(Nombre.getText()))
+            {
+                if(PilaCola.getSelectedIndex() != -1)
+                {
+                    if(PilaCola.getSelectedIndex() == 0)
+                    {
+                        L.IngresarInicio(Nombre.getText(), 8);
+                    }else{
+                        L.IngresarFin(Nombre.getText(), 8);
+                    }
+                }
+            }
+        }
+        
+            ChGoomba.setSelected(false);
+            Carga.setIcon(null);
+            Nombre.setText("");
+            ChPared.setSelected(false);
+            ChSuelo.setSelected(false);
+            ChKoopa.setSelected(false);
+            ChFicha.setSelected(false);
+            ChHongo.setSelected(false);
+            ChPersonaje.setSelected(false);
+            ChCastillo.setSelected(false);
+            
+            LNodo aux = L.getInicio();
+            int i = 0;
+            while(aux != null){
+                JPanel p = new JPanel();
+                JLabel l = new JLabel();
+                JLabel la = new JLabel();
+                l.setText(aux.getNombre());
+                l.setForeground(Color.WHITE);
+                l.setLocation(20, 100 + i);
+                p.setBounds(15, 15 + i, 53, 53);
+                p.setBackground(Color.red);
+                la.setBounds(0, 0, 53, 53);
+                
+                ImageIcon icono;
+                
+                switch (aux.getTipo())
+                {
+                    case 1:
+                        icono = new ImageIcon("Imagenes/personaje.png");  
+                        la.setIcon(icono);
+                        break;
+                    case 2:
+                        icono = new ImageIcon("Imagenes/castillo.jpg");  
+                        la.setIcon(icono);
+                        break;
+                    case 3:
+                        icono = new ImageIcon("Imagenes/suelo.png");  
+                        la.setIcon(icono);
+                        break;
+                    case 4:
+                        icono = new ImageIcon("Imagenes/muro.png");  
+                        la.setIcon(icono);
+                        break;
+                    case 5:
+                        icono = new ImageIcon("Imagenes/goomba.png");  
+                        la.setIcon(icono);
+                        break;
+                    case 6:
+                        icono = new ImageIcon("Imagenes/koopa.png");  
+                        la.setIcon(icono);
+                        break;
+                    case 7:
+                        icono = new ImageIcon("Imagenes/hongo.png");  
+                        la.setIcon(icono);
+                        break;
+                    case 8:
+                        icono = new ImageIcon("Imagenes/moneda.png");  
+                        la.setIcon(icono);
+                        break;
+                }
+                p.add(la);
+                p.setVisible(true);
+                l.setVisible(true);
+                la.setVisible(true);
+                p.repaint();
+                Elementos.add(p);
+                i = i + 75;
+                aux = aux.getSiguiente();
+            }
+            Elementos.repaint();
+        
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void GoombaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GoombaMouseClicked
+        // TODO add your handling code here:
+        if(ChGoomba.isSelected())
+        {
+            ChGoomba.setSelected(false);
+            Carga.setIcon(null);
+        }else{
+            ChGoomba.setSelected(true);
+            Carga.setIcon(LGoomba.getIcon());
+            ChPared.setSelected(false);
+            ChSuelo.setSelected(false);
+            ChKoopa.setSelected(false);
+            ChFicha.setSelected(false);
+            ChHongo.setSelected(false);
+            ChPersonaje.setSelected(false);
+            ChCastillo.setSelected(false);
+        }
+    }//GEN-LAST:event_GoombaMouseClicked
+
+    private void KoopaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_KoopaMouseClicked
+        // TODO add your handling code here:
+        if(ChKoopa.isSelected())
+        {
+            ChKoopa.setSelected(false);
+            Carga.setIcon(null);
+        }else{
+            ChKoopa.setSelected(true);
+            Carga.setIcon(LKoopa.getIcon());
+            ChPared.setSelected(false);
+            ChSuelo.setSelected(false);
+            ChGoomba.setSelected(false);
+            ChFicha.setSelected(false);
+            ChHongo.setSelected(false);
+            ChPersonaje.setSelected(false);
+            ChCastillo.setSelected(false);
+        }
+    }//GEN-LAST:event_KoopaMouseClicked
+
+    private void FichaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FichaMouseClicked
+        // TODO add your handling code here:
+        if(ChFicha.isSelected())
+        {
+            ChFicha.setSelected(false);
+            Carga.setIcon(null);
+        }else{
+            ChFicha.setSelected(true);
+            Carga.setIcon(LFicha.getIcon());
+            ChPared.setSelected(false);
+            ChSuelo.setSelected(false);
+            ChGoomba.setSelected(false);
+            ChKoopa.setSelected(false);
+            ChHongo.setSelected(false);
+            ChPersonaje.setSelected(false);
+            ChCastillo.setSelected(false);
+        }
+    }//GEN-LAST:event_FichaMouseClicked
+
+    private void HongoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HongoMouseClicked
+        // TODO add your handling code here:
+        if(ChHongo.isSelected())
+        {
+            ChHongo.setSelected(false);
+            Carga.setIcon(null);
+        }else{
+            ChHongo.setSelected(true);
+            Carga.setIcon(LHongo.getIcon());
+            ChPared.setSelected(false);
+            ChSuelo.setSelected(false);
+            ChGoomba.setSelected(false);
+            ChKoopa.setSelected(false);
+            ChFicha.setSelected(false);
+            ChPersonaje.setSelected(false);
+            ChCastillo.setSelected(false);
+        }
+    }//GEN-LAST:event_HongoMouseClicked
+
+    private void PersonajeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PersonajeMouseClicked
+        // TODO add your handling code here:
+        if(ChPersonaje.isSelected())
+        {
+            ChPersonaje.setSelected(false);
+            Carga.setIcon(null);
+        }else{
+            ChPersonaje.setSelected(true);
+            Carga.setIcon(LPersonaje.getIcon());
+            ChPared.setSelected(false);
+            ChSuelo.setSelected(false);
+            ChGoomba.setSelected(false);
+            ChKoopa.setSelected(false);
+            ChFicha.setSelected(false);
+            ChHongo.setSelected(false);
+            ChCastillo.setSelected(false);
+        }
+    }//GEN-LAST:event_PersonajeMouseClicked
+
+    private void CastilloMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CastilloMouseClicked
+        // TODO add your handling code here:
+        if(ChCastillo.isSelected())
+        {
+            ChCastillo.setSelected(false);
+            Carga.setIcon(null);
+        }else{
+            ChCastillo.setSelected(true);
+            Carga.setIcon(LCastillo.getIcon());
+            ChPared.setSelected(false);
+            ChSuelo.setSelected(false);
+            ChGoomba.setSelected(false);
+            ChKoopa.setSelected(false);
+            ChFicha.setSelected(false);
+            ChHongo.setSelected(false);
+            ChPersonaje.setSelected(false);
+        }
+    }//GEN-LAST:event_CastilloMouseClicked
+
+    private void ACargarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ACargarMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ACargarMouseClicked
+
+    private void ChPersonajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChPersonajeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ChPersonajeActionPerformed
 
     
     public JPanel getPared(){
@@ -247,12 +945,40 @@ public class Carga extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel ACargar;
+    private javax.swing.JLabel Carga;
+    private javax.swing.JPanel Castillo;
+    private javax.swing.JCheckBox ChCastillo;
+    private javax.swing.JCheckBox ChFicha;
+    private javax.swing.JCheckBox ChGoomba;
+    private javax.swing.JCheckBox ChHongo;
+    private javax.swing.JCheckBox ChKoopa;
     private javax.swing.JCheckBox ChPared;
+    private javax.swing.JCheckBox ChPersonaje;
     private javax.swing.JCheckBox ChSuelo;
     private javax.swing.JPanel Componentes;
     private javax.swing.JPanel Elementos;
+    private javax.swing.JPanel Ficha;
+    private javax.swing.JPanel Goomba;
+    private javax.swing.JPanel Hongo;
+    private javax.swing.JPanel Koopa;
+    private javax.swing.JLabel LCastillo;
+    private javax.swing.JLabel LFicha;
+    private javax.swing.JLabel LGoomba;
+    private javax.swing.JLabel LHongo;
+    private javax.swing.JLabel LKoopa;
+    private javax.swing.JLabel LPared;
+    private javax.swing.JLabel LPersonaje;
+    private javax.swing.JLabel LSuelo;
+    private javax.swing.JTextField Nombre;
     private javax.swing.JPanel Pared;
+    private javax.swing.JPanel Personaje;
+    private javax.swing.JComboBox PilaCola;
     private javax.swing.JPanel Suelo;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
