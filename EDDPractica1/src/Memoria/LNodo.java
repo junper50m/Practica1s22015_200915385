@@ -13,6 +13,7 @@ import javax.swing.JLabel;
  */
 public class LNodo {
     private String Nombre;
+    private int Id;
     private int Tipo;
     private JLabel Imagen;
     private LNodo Siguiente;
@@ -20,10 +21,20 @@ public class LNodo {
     public LNodo()
     {
         Nombre = "";
+        Id = 0;
         Tipo = 0;
         Imagen = null;
         Siguiente = null;
         Atras = null;
+    }
+
+
+    public int getId() {
+        return Id;
+    }
+
+    public void setId(int id) {
+        this.Id = id;
     }
 
     public JLabel getImagen() {

@@ -6,7 +6,6 @@
 package eddpractica1;
 import Memoria.*;
 import Interfaz.*;
-import Figura.*;
 /**
  *
  * @author JP
@@ -18,17 +17,21 @@ public class EDDPractica1 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Matriz M = new Matriz();
-        M.Crear(2, 2);
-        M.Mostrar();
-        System.out.println("-------------------------");
-        M.EliminarFila();
-        M.Mostrar();
+        
+        //M.Crear(2, 2);
+        //M.Mostrar();
+        //System.out.println("-------------------------");
+        //M.EliminarFila();
+        //M.Mostrar();
         //Inicio Principal = new Inicio();
         //Principal.show(true);
         Lista L = new Lista();
         Carga c = new Carga();
+        Creacion cre = new Creacion();
+        cre.setLista(L);
         c.setLista(L);
+        c.setCarga(c);
+        c.setCreacion(cre);
         c.show(true);
         //Pared p = new Pared(c.getPared());
         //p.CrearPared();

@@ -6,7 +6,6 @@
 package Memoria;
 
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 
 /**
  *
@@ -89,6 +88,62 @@ public class Lista {
             }
         }
     }
+    public void Eliminar(String Nombre,int j)
+    {
+        //System.out.println("********************************************");
+        //System.out.println("Eliminar: ["+Nombre+","+j+"]");
+        LNodo aux = Inicio;
+        while(aux != null)
+        {
+            //System.out.println("Eliminar11: ["+aux.getNombre()+","+aux.getId()+"]");
+            if(aux.getNombre().equals(Nombre) && aux.getId() == j)
+            {
+                if(aux.getAtras() == null)
+                {
+                    if(aux.getSiguiente() == null)
+                    {
+                        Inicio = Fin = aux = null;
+                    }else{
+                        Inicio = aux.getSiguiente();
+                        Inicio.setAtras(null);
+                        aux = null;
+                    }
+                }else{
+                    if(aux.getSiguiente() == null)
+                    {
+                        
+                        aux.getAtras().setSiguiente(null);
+                        aux = null;
+                    }else{
+                        aux.getAtras().setSiguiente(aux.getSiguiente());
+                        aux.getSiguiente().setAtras(aux.getAtras());
+                        aux = null;
+                    }
+                }
+            }else{
+                aux = aux.getSiguiente();
+            }
+            
+        }
+    }
+    
+    public LNodo Buscar(String Nombre,int j)
+    {
+        LNodo aux = Inicio;
+        LNodo tmp = null;
+        while(aux != null)
+        {
+            if(aux.getNombre().equals(Nombre) && aux.getId() == j)
+            {
+                tmp = aux;
+            }else{
+                aux = aux.getSiguiente();
+            }
+            
+        }
+        return tmp;
+    }
+    
     public boolean ListaVacia()
     {
         return getInicio() == null;
