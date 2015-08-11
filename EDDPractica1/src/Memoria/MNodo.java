@@ -5,12 +5,15 @@
  */
 package Memoria;
 
+import javax.swing.JLabel;
+
 /**
  *
  * @author JP
  */
 public class MNodo {
-    private int info;
+    private String Nombre;
+    private JLabel Imagen;
     private int x;
     private int y;
     private MNodo Siguiente;
@@ -19,7 +22,8 @@ public class MNodo {
     private MNodo Abajo;
     public MNodo()
     {
-        this.info = 0;
+        this.Nombre = "";
+        this.Imagen = null;
         this.x = -1;
         this.y = -1;
         this.Siguiente = null;
@@ -28,13 +32,23 @@ public class MNodo {
         this.Abajo = null;
     }
 
-    public int getInfo() {
-        return info;
+    public String getNombre() {
+        return Nombre;
     }
 
-    public void setInfo(int info) {
-        this.info = info;
+    public void setNombre(String Nombre) {
+        this.Nombre = Nombre;
     }
+
+    public JLabel getImagen() {
+        return Imagen;
+    }
+
+    public void setImagen(JLabel Imagen) {
+        this.Imagen = Imagen;
+    }
+
+   
 
     public int getX() {
         return x;

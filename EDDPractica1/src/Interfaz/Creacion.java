@@ -7,6 +7,7 @@ package Interfaz;
 
 import Memoria.LNodo;
 import Memoria.Lista;
+import Memoria.MNodo;
 import Memoria.Matriz;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -45,7 +46,7 @@ public class Creacion extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jPanel1 = new javax.swing.JPanel();
+        PJuego = new javax.swing.JPanel();
         Elementos = new javax.swing.JScrollPane();
         Elemento = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
@@ -54,18 +55,18 @@ public class Creacion extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout PJuegoLayout = new javax.swing.GroupLayout(PJuego);
+        PJuego.setLayout(PJuegoLayout);
+        PJuegoLayout.setHorizontalGroup(
+            PJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 998, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        PJuegoLayout.setVerticalGroup(
+            PJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 493, Short.MAX_VALUE)
         );
 
-        jScrollPane1.setViewportView(jPanel1);
+        jScrollPane1.setViewportView(PJuego);
 
         Elementos.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         Elementos.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
@@ -158,6 +159,7 @@ public class Creacion extends javax.swing.JFrame {
     
     private void CargarMatriz()
     {
+        MNodo aux = M.getInicio();
         
     }
     
@@ -249,9 +251,9 @@ public class Creacion extends javax.swing.JFrame {
     private javax.swing.JPanel Elemento;
     private javax.swing.JScrollPane Elementos;
     private javax.swing.JButton Inicio;
+    private javax.swing.JPanel PJuego;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
